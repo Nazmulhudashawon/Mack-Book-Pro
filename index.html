@@ -68,13 +68,12 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Total Price</td>
+                <tr class="text-danger" >
+                  <td >Total Price</td>
                   <td>$ <span id="total-price">1299</span></td>
                 </tr>
               </tbody>
             </table>
-
             <!-- promo code -->
             <div class="mt-5">
               <h4>Add promo code</h4>
@@ -83,8 +82,7 @@
                   id="promo-input"
                   class="form-control w-25 me-2"
                   type="text"
-                  value=""
-                />
+                  value="">
                 <button onclick="myFunction()" class="btn btn-danger">
                   Apply
                 </button>
@@ -92,13 +90,14 @@
             </div>
           </div>
         </div>
-        <div>
-          <hr />
-          <h1 class="text-center m-5">Total: $ <span id="total">1299</span></h1>
-        </div>
       </div>
     </main>
-    <footer></footer>
+    <footer>
+      <div class="bg-light">
+        <hr />
+        <h1 class="text-center m-5">Total: $ <span id="total">1299</span></h1>
+      </div>
+    </footer>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
   </body>

@@ -43,5 +43,5 @@ function myFunction(){
         const discountPrice=totalPrice - totalPrice*20/100 ;
         document.getElementById('total').innerText=discountPrice;  
     }
-    promoInputValue.value='';
+    promoInput.value='';
 }

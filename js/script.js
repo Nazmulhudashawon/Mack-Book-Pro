@@ -4,7 +4,6 @@ function extraCost(accessories, price){
         extraMemory.innerText = price; 
         //total price
         totalPrice();
-
 }
 document.getElementById('memory-16gb').addEventListener('click', function(){  
     extraCost('memory', 180);    
@@ -27,7 +26,6 @@ document.getElementById('delivery-charge').addEventListener('click', function(){
 document.getElementById('delivery-free').addEventListener('click', function(){  
     extraCost('delivery', 0);    
 })
-
 function totalPrice(){
         const BestPrice = document.getElementById('bestPrice').innerText;
         const ExtraMemoryCost = document.getElementById('memory-cost').innerText;
@@ -36,4 +34,14 @@ function totalPrice(){
         const totalCost=parseInt(BestPrice) + parseInt(ExtraMemoryCost) + parseInt(ExtraStorageCost) +parseInt(DeliveryCharge);
         document.getElementById('total-price').innerText=totalCost;
         document.getElementById('total').innerText=totalCost;
+}
+function myFunction(){
+    const promoInput=document.getElementById('promo-input');
+    let promoInputValue=promoInput.value;
+    if(promoInputValue== 'stevekaku'){
+        const totalPrice= document.getElementById('total-price').innerText;
+        const discountPrice=totalPrice - totalPrice*20/100 ;
+        document.getElementById('total').innerText=discountPrice;  
+    }
+    promoInputValue.value='';
 }

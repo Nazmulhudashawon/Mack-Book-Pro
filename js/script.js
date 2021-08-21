@@ -1,53 +1,39 @@
-// memory cost
-function memory(costChange){
-    const extraMemory=document.getElementById('memory-cost');
-    if(costChange){
-        extraMemory.innerText = 180;  
-    }
-    else{
-        extraMemory.innerText = 0;
-    }
+// extra cost counting
+function extraCost(accessories, price){
+    const extraMemory=document.getElementById(accessories +'-cost');
+        extraMemory.innerText = price; 
+        //total price
+        totalPrice();
+
 }
 document.getElementById('memory-16gb').addEventListener('click', function(){  
-    memory(true);    
+    extraCost('memory', 180);    
 })
 document.getElementById('memory-8gb').addEventListener('click', function(){  
-    memory(false);    
+    extraCost('memory', 0);    
 })
-
-// storage cost
-function storage(costChange){
-    const extraMemory=document.getElementById('storage-cost');
-    if(costChange){
-        extraMemory.innerText = 100;  
-    }
-    else{
-        extraMemory.innerText = 0;
-    }
-}
 document.getElementById('storage-256gb').addEventListener('click', function(){  
-    storage(false);    
-})
-document.getElementById('storage-512gb').addEventListener('click', function(){  
-    storage(true);    
+    extraCost('storage', 0);    
 })
 document.getElementById('storage-1tb').addEventListener('click', function(){  
-    storage(true);    
+    extraCost('storage', 180);    
 })
-
-// deliverycost
-function delivery(costChange){
-    const extraMemory=document.getElementById('delivery-cost');
-    if(costChange){
-        extraMemory.innerText = 20;  
-    }
-    else{
-        extraMemory.innerText = 0;
-    }
-}
+document.getElementById('storage-512gb').addEventListener('click', function(){  
+    extraCost('storage', 100);      
+})
 document.getElementById('delivery-charge').addEventListener('click', function(){  
-    delivery(true);    
+    extraCost('delivery', 20);    
 })
 document.getElementById('delivery-free').addEventListener('click', function(){  
-    delivery(false);    
+    extraCost('delivery', 0);    
 })
+
+function totalPrice(){
+        const BestPrice = document.getElementById('bestPrice').innerText;
+        const ExtraMemoryCost = document.getElementById('memory-cost').innerText;
+        const ExtraStorageCost = document.getElementById('storage-cost').innerText;
+        const DeliveryCharge = document.getElementById('delivery-cost').innerText;
+        const totalCost=parseInt(BestPrice) + parseInt(ExtraMemoryCost) + parseInt(ExtraStorageCost) +parseInt(DeliveryCharge);
+        document.getElementById('total-price').innerText=totalCost;
+        document.getElementById('total').innerText=totalCost;
+}

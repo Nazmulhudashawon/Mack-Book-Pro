@@ -22,15 +22,16 @@ function totalPrice() {
   document.getElementById('total-price').innerText = totalCost;
   document.getElementById('total').innerText = totalCost;
 }
-//function calling
+//function calling for memory cost
 extraCost('memory', 180, 'memory-16gb');
 extraCost('memory', 0, 'memory-8gb');
+//function calling for storage cost
 extraCost('storage', 0, 'storage-256gb');
 extraCost('storage', 100, 'storage-512gb');
 extraCost('storage', 180, 'storage-1tb');
+//function calling for delivery cost
 extraCost('delivery', 0, 'delivery-free');
 extraCost('delivery', 20, 'delivery-charge');
-
 // dicount price function
 function myFunction() {
   const promoInput = document.getElementById('promo-input');
